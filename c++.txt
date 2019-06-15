@@ -1,0 +1,15 @@
+explicit
+복사 생성자
+변환 생성자 
+operator 오버로딩
+R value 참조
+move->  강제 r value로 만듬
+뒤에 const자주쓰기
+
+상속  public 으로
+형: 해석하는 방법
+
+virtual 함수--> 가장 나중 미래의 함수 호출
+final--> 문법적으로 재정의 막는 키워드
+
+언어가 중요한게 아니다!!!! 니가 투자한 시간이 중요하다
