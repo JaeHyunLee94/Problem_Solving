@@ -1,26 +1,31 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
+
 
 
 using namespace std;
 
-
-void count_way(const vector<int>& arr, int start_index, int count, int S, int* way) {
-
-
-	if (arr.size() - start_index > count) return;
-	if()
+int cnt = 0;
 
 
+void count_way(const vector<int>& seq, int S) {
 
-	count_way(arr, start_index + 1, count, S, way);
-	count_way(arr, start_index+1, count - 1, S - arr[start_index], way);
+	if (seq.empty()) return;
+	if (seq[0] == S) cnt++;
+		
+
+
+
+	
+	vector<int> next_seq(seq.begin() + 1, seq.end());
+	count_way(next_seq, S-seq[0]);
+	count_way(next_seq, S);
+
 
 
 
 }
-
 
 int main() {
 
@@ -28,20 +33,20 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-
-
-	int N, S;
+	
+	int N, S, tmp;
 	cin >> N >> S;
-	int tmp;
-
-	vector<int> arr(N);
+	vector<int> seq(N);
 	for (int i = 0; i < N; i++) {
-		arr[i] = tmp;
+		cin >> tmp;
+		seq[i] = tmp;
 	}
-	int way = 0;
 
+	sort(seq.begin(), seq.end());
 
+	count_way(seq, S);
 
+	cout << cnt;
 
 
 	return 0;
